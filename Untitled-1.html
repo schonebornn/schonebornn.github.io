@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Estilizando o body com fundo preto */
+    body {
+      background-color: black;
+      display: flex;
+	  flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    
+    /* Estilizando o texto */
+    #typing-text {
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    
+    /* Estilizando o botão */
+    .button {
+      background-color: #ffffff;
+      color: black;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      margin-top: 20px;
+      border-radius: 4px;
+    }
+  </style>
+  <script>
+    // Função para simular o efeito de digitação
+    function typeWriter(text, i, interval) {
+      if (i < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(function() { typeWriter(text, i, interval) }, interval);
+      }
+    }
+  </script>
+</head>
+<body>
+  <p id="typing-text"></p>
+  <a href="https://youtu.be/NZuTj1aE-68" class="button">aperta aqui!</a>
+  <script>
+    // Chamando a função ao carregar a página
+    window.onload = function() {
+      var text = "oi amor, quis fazer algo especial e minimamente criativo. te amo!";
+      var interval = 75; // Intervalo de digitação (em milissegundos)
+      typeWriter(text, 0, interval);
+    };
+  </script>
+</body>
+</html>
